@@ -11,6 +11,12 @@ See `requirements.txt`. Uses the following:
 
 You'll also need a shodan.io API token.
 
+## Installation
+
+First clone the repository: `git clone https://github.com/h0ffayyy/certsee.git`
+
+Install the requirements listed above: `pip3 install -r requirements.txt`
+
 ## Usage
 
 ```
