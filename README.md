@@ -30,3 +30,16 @@ optional arguments:
                         defaults to 2
   -v, --verbose         verbose output
 ```
+
+## Examples
+
+```
+python3 certsee.py -d hackerone.com -t XXXXXXXXXXXXXXXXXXXXXXXXX -T 10
+[+] Querying crt.sh for: hackerone.com
+[+] Found 3 certificates in last 10 days for query: hackerone.com
+[+] Querying Shodan for certificate serial numbers
+[+] Checking serial 04377e9d1a44dfbe0a7741236218ed3ac3d2
+[+] Checking serial 037dca861a6b374c4f99eb64716706c5379e
+[+] Checking serial 046e81b1a297ad0d2ae0ff7f1b1c25b167db
+[+] Done!
+```
