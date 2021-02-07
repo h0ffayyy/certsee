@@ -1,22 +1,22 @@
 # certsee
 
-Simple utility to query crt.sh and find associated infrastructure using Shodan.
+Simple utility to query crt.sh and find associated infrastructure using Shodan based on certificate serial numbers.
 
 ## Requirements
 
-Uses the following:
+See `requirements.txt`. Uses the following:
 
 * [PaulSec's Unofficial crt.sh Python API](https://github.com/PaulSec/crt.sh)
 * shodan
 
-See `requirements.txt`
+You'll also need a shodan.io API token.
 
 ## Usage
 
 ```
-usage: crtshmon.py [-h] [-d DOMAIN] [-o OUT] [-t TOKEN] [-T TIMEFRAME] [-v]
+usage: certsee.py [-h] [-d DOMAIN] [-o OUT] [-t TOKEN] [-T TIMEFRAME] [-v]
 
-Query crt.sh and find associated IPs in Shodan
+Query crt.sh and find associated infrastructure in Shodan
 
 optional arguments:
   -h, --help            show this help message and exit
