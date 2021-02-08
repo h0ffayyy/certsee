@@ -125,7 +125,8 @@ def query_crtsh(args):
             #print(f'[+] Found one! {result[item]["entry_timestamp"]}')
             # check for any duplicate serial numbers
             if not any(s["serial_number"] == item["serial_number"] for s in recent_certs):
-                recent_certs.append(item)
+                if len(item["serial_number"]) >= 32:
+                    recent_certs.append(item)
 
     print(f'[+] Found {len(recent_certs)} certificates in last {args.timeframe} days for query: {domain}')
 
