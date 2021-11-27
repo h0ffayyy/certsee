@@ -118,7 +118,7 @@ def query_crtsh(args):
 
     print(f'[+] Querying crt.sh for: {domain}')
 
-    for item in result[0]:
+    for item in result:
         result_timestamp = parse(item["entry_timestamp"])
 
         if now-timedelta(days=args.timeframe) <= result_timestamp <= now:
