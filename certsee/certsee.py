@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+from modules import censys
 from crtsh import crtshAPI
 import os
 import sys
@@ -124,6 +125,7 @@ def query_crtsh(args):
         if now-timedelta(days=args.timeframe) <= result_timestamp <= now:
             #print(f'[+] Found one! {result[item]["entry_timestamp"]}')
             # check for any duplicate serial numbers
+            # TODO: convert crtsh from hex to decimal to search censys data
             if not any(s["serial_number"] == item["serial_number"] for s in recent_certs):
                 if len(item["serial_number"]) >= 32:
                     recent_certs.append(item)
@@ -172,6 +174,10 @@ def parse_arguments():
 def main():
     """ main! """
 
+    censys_object = censys.Censys()
+    censys_object.query_serial()
+
+    """
     args = parse_arguments()
     crtsh_results = query_crtsh(args)
 
@@ -183,7 +189,8 @@ def main():
         if args.out:
             output_to_file(shodan_results, args)
     
-    print("[+] Done!")
+    print("[+] Done!") """
+
 
 if __name__ == "__main__":
     try:
